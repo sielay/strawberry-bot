@@ -1,0 +1,24 @@
+from .gpio import setupGPIO, destroyGPIO
+from .irc import code = on_ir_receive(pinNo)
+            if code:
+                print(str(hex(code)))
+            else:
+                print("Invalid code")
+
+def eventloop():
+  setupGPIO()
+  try:
+		print("Starting event loop")
+		while True:
+
+  except KeyboardInterrupt:
+    pass
+  except RuntimeError as err:
+    # this gets thrown when control C gets pressed
+    # because wait_for_edge doesn't properly pass this on
+    print("Runtime error: {0}".format(err))
+  except:
+    print("Unexpected error:", sys.exc_info()[0])
+    pass
+  print("Quitting")
+  destroyGPIO()
